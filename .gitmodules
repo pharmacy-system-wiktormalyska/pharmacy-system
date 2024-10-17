@@ -1,0 +1,6 @@
+[submodule "pharmacy-system-backend"]
+	path = pharmacy-system-backend
+	url = https://github.com/wiktormalyska/pharmacy-system-backend.git
+[submodule "pharmacy-system-frontend"]
+	path = pharmacy-system-frontend
+	url = https://github.com/wiktormalyska/pharmacy-system-frontend.git

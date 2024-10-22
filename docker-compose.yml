@@ -1,0 +1,14 @@
+services:
+  frontend:
+    image: pharmacy-system-frontend:latest
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+
+  backend:
+    image: pharmacy-system-backend:latest
+    ports:
+      - "3306:3306"
+    environment:
+      - SPRING_PROFILES_ACTIVE=prod

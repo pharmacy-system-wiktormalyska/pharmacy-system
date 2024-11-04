@@ -1,5 +1,6 @@
 services:
   frontend:
+    container_name: pharmacy-system-frontend
     image: pharmacy-system-frontend:latest
     # ports:
     #   - "3000:3000"
@@ -9,6 +10,7 @@ services:
       - xcaddy
 
   backend:
+    container_name: pharmacy-system-backend
     image: pharmacy-system-backend:latest
     # ports:
     #   - "3131:8080"

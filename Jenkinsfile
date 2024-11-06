@@ -7,7 +7,6 @@ pipeline {
     }
 
     stages{
-        //Checkout main repo
         stage('Download main') {
             steps {
                 git url: 'https://github.com/wiktormalyska/pharmacy-system.git',

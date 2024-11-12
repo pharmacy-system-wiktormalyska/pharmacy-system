@@ -1,6 +1,8 @@
 pipeline {
     agent any
-
+    options {
+        skipDefaultCheckout()
+    }
     environment {
         FRONTEND_IMAGE = 'pharmacy-system-frontend:latest'
         BACKEND_IMAGE = 'pharmacy-system-backend:latest'

@@ -13,22 +13,7 @@ pipeline {
             steps {
                 git url: 'https://github.com/wiktormalyska/pharmacy-system.git',
                     branch: 'master',
-                    credentialsId: 'github-wiktormalyska',
-                    submoduleCfg: [],
-                    extensions: [[$class: 'SubmoduleOption', recursiveSubmodules: true, trackingSubmodules: true, pollSubmodules: true]]
-            }
-        }
-
-        stage('Check for Submodule Changes') {
-            steps {
-                script {
-                    def changes = sh(script: "git diff --submodule", returnStdout: true).trim()
-                    if (changes) {
-                        echo "Submodules have changed:\n${changes}"
-                    } else {
-                        echo "No changes in submodules."
-                    }
-                }
+                    credentialsId: 'github-wiktormalyska'
             }
         }
 

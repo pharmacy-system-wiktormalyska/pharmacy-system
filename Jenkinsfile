@@ -13,7 +13,7 @@ pipeline {
             steps {
                 git url: 'https://github.com/wiktormalyska/pharmacy-system.git',
                     branch: 'master',
-                    credentialsId: 'github-wiktormalyska',
+                    credentialsId: 'github-wiktormalyska'
             }
         }
 

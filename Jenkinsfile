@@ -11,11 +11,17 @@ pipeline {
     stages{
         stage('Download main') {
             steps {
-                git url: 'https://github.com/wiktormalyska/pharmacy-system.git',
-                    branch: 'master',
-                    credentialsId: 'github-wiktormalyska',
-                    submoduleCfg: [],
-                    extensions: [[$class: 'SubmoduleOption', recursiveSubmodules: true, trackingSubmodules: true, pollSubmodules: true]]
+                checkout([$class: 'GitSCM',
+                          branches: [[name: '*/master']],
+                          doGenerateSubmoduleConfigurations: false,
+                          extensions: [[$class: 'SubmoduleOption',
+                                        disableSubmodules: false,
+                                        parentCredentials: false,
+                                        recursiveSubmodules: true,
+                                        reference: '',
+                                        trackingSubmodules: false]], 
+                          submoduleCfg: [], 
+                          userRemoteConfigs: [[url: 'https://github.com/wiktormalyska/pharmacy-system']]])
             }
         }
 

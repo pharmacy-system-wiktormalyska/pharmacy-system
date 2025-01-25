@@ -36,6 +36,14 @@ pipeline {
                 }
             }
         } 
+
+        stage('Input .env to backend') {
+            steps {
+                withCredentials([file(credentialsId: 'pharmacy-system-backend-.env', variable: 'BACKEND_ENV_FILE')]) {
+                    sh 'cp "$BACKEND_ENV_FILE" pharmacy-system-backend/src/main/resources/.env'
+                }
+            }
+        }
         
         stage('Verify Workspace') {
             steps {

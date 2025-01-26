@@ -11,18 +11,16 @@ pipeline {
     stages{
         stage('Download main') {
             steps {
-                git url: 'https://github.com/wiktormalyska/pharmacy-system.git',
-                    branch: 'master',
-                    credentialsId: 'github-wiktormalyska'
+                git url: 'https://github.com/pharmacy-system-wiktormalyska/pharmacy-system.git',
+                    branch: 'master'
             }
         }
 
         stage('Download backend') {
             steps {
                 dir('pharmacy-system-backend') {
-                    git url: 'https://github.com/wiktormalyska/pharmacy-system-backend.git',
-                        branch: 'master',
-                        credentialsId: 'github-wiktormalyska'
+                    git url: 'https://github.com/pharmacy-system-wiktormalyska/pharmacy-system-backend.git',
+                        branch: 'master'
                 }
             }
         }
@@ -30,9 +28,8 @@ pipeline {
         stage('Download frontend') {
             steps {
                 dir('pharmacy-system-frontend') {
-                    git url: 'https://github.com/wiktormalyska/pharmacy-system-frontend.git',
-                        branch: 'master',
-                        credentialsId: 'github-wiktormalyska'
+                    git url: 'https://github.com/pharmacy-system-wiktormalyska/pharmacy-system-frontend.git',
+                        branch: 'master'
                 }
             }
         } 

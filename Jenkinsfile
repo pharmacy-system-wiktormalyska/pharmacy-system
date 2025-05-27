@@ -37,6 +37,7 @@ pipeline {
         stage('Input .env to backend') {
             steps {
                 withCredentials([file(credentialsId: 'pharmacy-system-backend-.env', variable: 'BACKEND_ENV_FILE')]) {
+                    sh 'chown jenkins:jenkins pharmacy-system-backend/src/main/resources'
                     sh 'chmod 755 pharmacy-system-backend/src/main/resources'
                     sh 'cp "$BACKEND_ENV_FILE" pharmacy-system-backend/src/main/resources/.env'
                     sh 'chmod 644 pharmacy-system-backend/src/main/resources/.env'
